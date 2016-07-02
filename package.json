@@ -1,0 +1,33 @@
+{
+  "name": "if-node-version",
+  "version": "0.0.0",
+  "description": "Run commands if on specified node version.",
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "main": "lib/index.js",
+  "bin": "bin/index.js",
+  "files": ["bin", "lib"],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "cross-spawn": "^4.0.0",
+    "semver": "^5.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^2.13.1",
+    "eslint-config-mysticatea": "^4.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mysticatea/if-node-version.git"
+  },
+  "keywords": [],
+  "author": "Toru Nagashima",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mysticatea/if-node-version/issues"
+  },
+  "homepage": "https://github.com/mysticatea/if-node-version#readme"
+}

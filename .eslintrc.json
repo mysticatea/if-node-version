@@ -1,0 +1,7 @@
+{
+    "extends": ["mysticatea/es5", "mysticatea/node"],
+    "rules": {
+        "require-jsdoc": "off",
+        "no-console": "off"
+    }
+}
