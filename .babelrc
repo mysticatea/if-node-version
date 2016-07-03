@@ -1,0 +1,4 @@
+{
+    "presets": ["power-assert"],
+    "only": "test/*.js"
+}

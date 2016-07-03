@@ -16,6 +16,6 @@ var version = require(path.resolve(__dirname, "../package.json")).version
 // Public Interface
 //------------------------------------------------------------------------------
 
-exports.printVersion = function printVersion() {
-    console.log("v" + version)
+exports.printVersion = function printVersion(output) {
+    output.write("v" + version)
 }

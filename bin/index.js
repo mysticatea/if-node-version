@@ -22,19 +22,30 @@ var versionRange = argv[2]
 var command = argv[3]
 var args = argv.slice(4)
 
-if (argv.length < 4) {
-    require("./help").printHelp()
-    process.exit(1)
-}
-
 if (versionRange === "--help" || versionRange === "-h") {
-    require("./help").printHelp()
+    require("./help").printHelp(process.stdout)
     return
 }
 
 if (versionRange === "--version" || versionRange === "-v") {
-    require("./version").printVersion()
+    require("./version").printVersion(process.stdout)
     return
 }
 
-spawnIfNodeVersionSatisfies(versionRange, command, args, {stdio: "inherit"})
+if (argv.length < 4) {
+    require("./help").printHelp(process.stderr)
+    process.exit(1)
+}
+
+var cp = spawnIfNodeVersionSatisfies(
+    versionRange,
+    command,
+    args,
+    {stdio: "inherit"}
+)
+
+if (cp != null) {
+    cp.on("close", function(exitCode) {
+        process.exit(exitCode)
+    })
+}

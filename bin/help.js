@@ -22,6 +22,6 @@ var help = fs.readFileSync(path.join(__dirname, "help.txt"), "utf8")
 // Public Interface
 //------------------------------------------------------------------------------
 
-exports.printHelp = function printHelp() {
-    console.log(help)
+exports.printHelp = function printHelp(output) {
+    output.write(help)
 }
