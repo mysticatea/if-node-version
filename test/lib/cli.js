@@ -43,8 +43,6 @@ function run(args) {
     })
 }
 
-// TODO: https://github.com/mysticatea/eslint-plugin/issues/7
-//eslint-disable-next-line mysticatea/block-scoped-var
 function runToCheck(range, options) {
     var fail = Boolean(options && options.fail)
     return run([
@@ -59,7 +57,4 @@ function runToCheck(range, options) {
 //------------------------------------------------------------------------------
 
 exports.run = run
-
-// TODO: https://github.com/mysticatea/eslint-plugin/issues/7
-//eslint-disable-next-line mysticatea/block-scoped-var
 exports.runToCheck = runToCheck

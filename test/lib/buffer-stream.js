@@ -32,6 +32,4 @@ Object.defineProperty(BufferStream.prototype, "_write", {
     writable: true,
 })
 
-// TODO: https://github.com/mysticatea/eslint-plugin/issues/7
-//eslint-disable-next-line mysticatea/block-scoped-var
 module.exports = BufferStream

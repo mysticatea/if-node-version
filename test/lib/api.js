@@ -53,8 +53,6 @@ function run(range, options) {
     })
 }
 
-// TODO: https://github.com/mysticatea/eslint-plugin/issues/7
-//eslint-disable-next-line mysticatea/block-scoped-var
 function runSync(range, options) {
     var fail = Boolean(options && options.fail)
     var result = spawnIfNodeVersionSatisfies.sync(
@@ -74,7 +72,4 @@ function runSync(range, options) {
 //------------------------------------------------------------------------------
 
 exports.run = run
-
-// TODO: https://github.com/mysticatea/eslint-plugin/issues/7
-//eslint-disable-next-line mysticatea/block-scoped-var
 exports.runSync = runSync
