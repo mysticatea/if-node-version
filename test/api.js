@@ -25,7 +25,7 @@ var runSync = api.runSync
 // Test
 //------------------------------------------------------------------------------
 
-describe("Under Node.js v" + version + ",", function() {
+describe("[Node API] Under Node.js v" + version + ",", function() {
     var ranges = [
         ">=0.10",
         ">=0.12",

@@ -35,16 +35,32 @@ $ npm install --save-dev if-node-version
 ```
 Usage:
     $ if-node-version <VersionRange> <Command> [...args]
+
+        Run a shell command if it's on the node of specified versions.
+        Otherwise, do nothing.
+
+        Exit code is the exit code of the <Command>.
+
+    $ if-node-version <VersionRange>
+
+        Check if it's on the node of specified versions.
+
+        Exit code is 0 if it's on the node of specified versions.
+        Otherwise, exit code is 1.
+
     $ if-node-version --help
+
+        Show this help text.
+
     $ if-node-version --version
 
-    Run a shell command if it's on the node of specified versions.
+        Show the version number of `if-node-version` command.
 
 Parameters:
-    <VersionRange> .... A text which specifies the version range of Node.js.
+    <VersionRange> .... A text which specifies the version range of Node.js
                         This text format is defined by node-semver module:
                         https://www.npmjs.com/package/semver#ranges
-    <Command> ......... A shell command.
+    <Command> ......... The shell command to execute.
     [...args] ......... Parameters of the shell command.
 
 Examples:
@@ -85,6 +101,15 @@ This function returns the object as same as [child_process.spawnSync].
 
 Welcome your contributions!<br>
 Please use GitHub's issues/PRs.
+
+### Tools to develop
+
+- `npm install` installs dependencies.
+- `npm test` runs tests and measures coverage.
+- `npm run coverage` opens the coverage result of `npm test`.
+- `npm run clean` removes the coverage result of `npm test`.
+- `npm run lint` analyzes codes by ESLint.
+- `npm run watch` runs tests (without coverage measurement) when source code is modified.
 
 
 [npm]: https://www.npmjs.com/

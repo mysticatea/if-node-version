@@ -10,7 +10,7 @@
 // Requirements
 //------------------------------------------------------------------------------
 
-var spawnIfNodeVersionSatisfies = require("../lib")
+var spawn = require("../lib")
 
 //------------------------------------------------------------------------------
 // Main
@@ -24,20 +24,24 @@ var args = argv.slice(4)
 
 if (versionRange === "--help" || versionRange === "-h") {
     require("./help").printHelp(process.stdout)
-    return
+    process.exit(0)
 }
 
 if (versionRange === "--version" || versionRange === "-v") {
     require("./version").printVersion(process.stdout)
-    return
+    process.exit(0)
 }
 
-if (argv.length < 4) {
+if (!versionRange) {
     require("./help").printHelp(process.stderr)
     process.exit(1)
 }
 
-var cp = spawnIfNodeVersionSatisfies(
+if (!command) {
+    process.exit(spawn.isNodeVersionSatisfies(versionRange) ? 0 : 1)
+}
+
+var cp = spawn(
     versionRange,
     command,
     args,

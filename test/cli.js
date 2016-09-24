@@ -25,7 +25,7 @@ var runToCheck = cli.runToCheck
 // Test
 //------------------------------------------------------------------------------
 
-describe("If no argument,", function() {
+describe("[CLI Command] If no argument,", function() {
     var result = null
 
     before(function() {
@@ -48,7 +48,7 @@ describe("If no argument,", function() {
     })
 })
 
-describe("If '--help' is given,", function() {
+describe("[CLI Command] If '--help' is given,", function() {
     var result = null
 
     before(function() {
@@ -70,7 +70,7 @@ describe("If '--help' is given,", function() {
     })
 })
 
-describe("If '-h' is given,", function() {
+describe("[CLI Command] If '-h' is given,", function() {
     var result = null
 
     before(function() {
@@ -92,7 +92,7 @@ describe("If '-h' is given,", function() {
     })
 })
 
-describe("If '--version' is given,", function() {
+describe("[CLI Command] If '--version' is given,", function() {
     var result = null
 
     before(function() {
@@ -115,7 +115,7 @@ describe("If '--version' is given,", function() {
     })
 })
 
-describe("Under Node.js v" + version + ",", function() {
+describe("[CLI Command] Under Node.js v" + version + ",", function() {
     var ranges = [
         ">=0.10",
         ">=0.12",
@@ -183,6 +183,35 @@ describe("Under Node.js v" + version + ",", function() {
                     })
                     it("should NOT run the specified command", function() {
                         assert(result.stdout === "")
+                    })
+                }
+            })
+
+            describe("with no command,", function() {
+                var result = null
+
+                before(function() {
+                    return run([range]).then(function(ret) {
+                        result = ret
+                    })
+                })
+
+                it("should not output to stdout", function() {
+                    assert(result.stdout === "")
+                })
+
+                it("should not output to stderr", function() {
+                    assert(result.stderr === "")
+                })
+
+                if (semver.satisfies(version, range)) {
+                    it("should exit with zero", function() {
+                        assert(result.exitCode === 0)
+                    })
+                }
+                else {
+                    it("should exit with one", function() {
+                        assert(result.exitCode === 1)
                     })
                 }
             })
