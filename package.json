@@ -14,14 +14,13 @@
   "scripts": {
     "clean": "rimraf .nyc_output coverage",
     "lint": "node bin/index.js \">=4\" eslint bin lib test",
-    "coverage": "wait-on coverage/lcov-report/index.html && opener coverage/lcov-report/index.html",
-    "coveralls": "cat coverage/lcov.info | coveralls",
-    "preversion": "run-s clean test",
+    "preversion": "npm test",
     "postversion": "git push && git push --tags",
-    "test": "run-s clean lint test:main",
-    "test:main": "nyc --require babel-register --reporter=lcov mocha \"test/*.js\" --timeout 10000",
-    "watch": "npm run clean && run-p watch:main coverage",
-    "watch:main": "chokidar \"{bin,lib,test}/**/*.js\" --initial --command \"npm run test:main\""
+    "pretest": "run-s clean lint",
+    "test": "nyc mocha \"test/*.js\" --timeout 30000 --compilers js:babel-register",
+    "coverage": "nyc report -r lcov && opener coverage/lcov-report/index.html",
+    "watch": "mocha \"test/*.js\" --timeout 30000 --compilers js:babel-register --watch --growl",
+    "codecov": "nyc report -r lcovonly && codecov"
   },
   "dependencies": {
     "cross-spawn": "^4.0.0",
@@ -31,7 +30,7 @@
     "babel-preset-power-assert": "^1.0.0",
     "babel-register": "^6.9.0",
     "chokidar-cli": "^1.2.0",
-    "coveralls": "^2.11.9",
+    "codecov": "^1.0.1",
     "eslint": "^3.0.0",
     "eslint-config-mysticatea": "^5.0.0",
     "mocha": "^2.5.3",
@@ -40,8 +39,7 @@
     "opener": "^1.4.1",
     "pinkie-promise": "^2.0.1",
     "power-assert": "^1.4.1",
-    "rimraf": "^2.5.2",
-    "wait-on": "^1.5.2"
+    "rimraf": "^2.5.2"
   },
   "repository": {
     "type": "git",

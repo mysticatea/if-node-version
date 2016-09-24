@@ -3,7 +3,7 @@
 [![npm version](https://img.shields.io/npm/v/if-node-version.svg)](https://www.npmjs.com/package/if-node-version)
 [![Downloads/month](https://img.shields.io/npm/dm/if-node-version.svg)](http://www.npmtrends.com/if-node-version)
 [![Build Status](https://travis-ci.org/mysticatea/if-node-version.svg?branch=master)](https://travis-ci.org/mysticatea/if-node-version)
-[![Coverage Status](https://coveralls.io/repos/mysticatea/if-node-version/badge.svg?branch=master&service=github)](https://coveralls.io/github/mysticatea/if-node-version?branch=master)
+[![Coverage Status](https://codecov.io/gh/mysticatea/if-node-version/branch/master/graph/badge.svg)](https://codecov.io/gh/mysticatea/if-node-version)
 [![Dependency Status](https://david-dm.org/mysticatea/if-node-version.svg)](https://david-dm.org/mysticatea/if-node-version)
 
 Run a shell command if it's on the node of specified versions.

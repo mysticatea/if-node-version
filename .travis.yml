@@ -8,4 +8,4 @@ node_js:
 before_script:
   - "node bin/index.js '^0.10.0' npm install spawn-sync"
 after_success:
-  - npm run coveralls
+  - npm run codecov
