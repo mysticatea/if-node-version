@@ -77,9 +77,20 @@ This function returns the object as same as [child_process.spawnSync].
 
 **Note:** If you use this function on node `0.10`, you will also need to install [spawn-sync].
 
+## Changelogs
+
+- [GitHub Releases]
+
+## Contributing
+
+Welcome your contributions!<br>
+Please use GitHub's issues/PRs.
+
+
 [npm]: https://www.npmjs.com/
 [npm-scripts]: https://docs.npmjs.com/misc/scripts
 [child_process.ChildProcess]: https://nodejs.org/api/child_process.html#child_process_class_childprocess
 [the document of `child_process.spawn`]: https://nodejs.org/api/child_process.html#child_process_child_process_spawn_command_args_options
 [child_process.spawnSync]: https://nodejs.org/api/child_process.html#child_process_child_process_spawnsync_command_args_options
 [spawn-sync]: https://www.npmjs.com/package/spawn-sync
+[GitHub Releases]: https://github.com/mysticatea/if-node-version/releases
