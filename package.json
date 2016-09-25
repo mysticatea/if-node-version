@@ -45,7 +45,22 @@
     "type": "git",
     "url": "git+https://github.com/mysticatea/if-node-version.git"
   },
-  "keywords": [],
+  "keywords": [
+    "node",
+    "version",
+    "semver",
+    "range",
+    "check",
+    "compare",
+    "conditional",
+    "less",
+    "greater",
+    "than",
+    "run",
+    "execute",
+    "command",
+    "cli"
+  ],
   "author": "Toru Nagashima",
   "license": "MIT",
   "bugs": {
