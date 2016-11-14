@@ -1,6 +1,6 @@
 {
   "name": "if-node-version",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Run commands if on specified node version.",
   "engines": {
     "node": ">=0.10.0"
