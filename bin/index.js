@@ -15,7 +15,7 @@ var spawn = require("../lib")
 //------------------------------------------------------------------------------
 // Main
 //------------------------------------------------------------------------------
-/*eslint-disable no-process-exit */
+/*eslint no-process-exit: off */
 
 var argv = process.argv
 var versionRange = argv[2]

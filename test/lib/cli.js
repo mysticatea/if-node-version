@@ -56,5 +56,5 @@ function runToCheck(range, options) {
 // Public Interface
 //------------------------------------------------------------------------------
 
-exports.run = run
-exports.runToCheck = runToCheck
+module.exports.run = run
+module.exports.runToCheck = runToCheck

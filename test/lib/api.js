@@ -71,5 +71,5 @@ function runSync(range, options) {
 // Public Interface
 //------------------------------------------------------------------------------
 
-exports.run = run
-exports.runSync = runSync
+module.exports.run = run
+module.exports.runSync = runSync
